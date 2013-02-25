@@ -27,8 +27,10 @@ public class Drawer {
 
         int visualX = (int) ((int) p.getX() / scale);
         int visualY = (int) ((int) p.getY() / scale);
-        int visualWidth = (int) ((int) p.getWidth()/ scale);
-        int visualHeight = (int) ((int) p.getHeight()/ scale);
+        int visualWidth = (int) ((int) p.getWidth() / scale);
+        int visualHeight = (int) ((int) p.getHeight() / scale);
+
+        visualX -= visualWidth / 2;
 
         g.fillRect(visualX, visualY, visualWidth, visualHeight);
     }
@@ -44,7 +46,7 @@ public class Drawer {
 
         int visualX = (int) ((int) b.getX() / scale);
         int visualY = (int) ((int) b.getY() / scale);
-        int visualSize = (int) ((int) b.getSize()/ scale);
+        int visualSize = (int) ((int) b.getSize() / scale);
 
         g.fillRect(visualX, visualY, visualSize, visualSize);
     }

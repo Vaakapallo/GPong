@@ -23,4 +23,8 @@ public class Camera {
     public double getScale() {
         return scale;
     }
+
+    public void setScale(double scale) {
+        this.scale = scale;
+    }
 }

@@ -58,7 +58,7 @@ public class Paddle {
         if(this.direction == Direction.UP && this.y > 0) {
             this.y--;
         }
-        if(this.direction == Direction.DOWN && this.y < s.getHeight()) {
+        if(this.direction == Direction.DOWN && this.y+this.height < s.getHeight()) {
             this.y++;
         }
     }
