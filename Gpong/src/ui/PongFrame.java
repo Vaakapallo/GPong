@@ -22,4 +22,9 @@ public class PongFrame extends JFrame {
         this.setSize(game.getStage().getWidth() / 1000, game.getStage().getHeight() / 1000);
         this.setVisible(true);
     }
+    
+    
+    public void updatePanel(){
+        this.repaint();
+    }
 }

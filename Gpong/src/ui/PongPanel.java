@@ -21,14 +21,17 @@ public class PongPanel extends JPanel {
     public PongPanel(Gameplay game) {
         this.game = game;
         drawer = new Drawer(new Camera(1000));
-        this.setBackground(Color.black);
     }
     
     @Override
     protected void paintComponent(Graphics g) {
-        g.setColor(Color.white);
+        g.setColor(Color.black);
+        g.fillRect(0, 0, 99999999, 489999990);
+        g.setColor(Color.red);
         drawer.drawBalls(game.getBalls(), g);
+        g.setColor(Color.yellow);
         drawer.drawPaddle(game.getLeftPaddle(), g);
+        g.setColor(Color.BLUE);
         drawer.drawPaddle(game.getRightPaddle(), g);
         drawer.drawScore(game.getPlayer1score(), game.getPlayer2score(), g);
     }

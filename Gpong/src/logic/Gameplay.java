@@ -6,6 +6,7 @@ package logic;
 
 import java.util.HashSet;
 import java.util.Iterator;
+import ui.PongFrame;
 
 /**
  *
@@ -19,15 +20,17 @@ public class Gameplay {
     private Stage stage;
     private int player1score = 0;
     private int player2score = 0;
+    private PongFrame frame;
 
     public Gameplay(int x, int y) {
         this.balls = new HashSet();
         this.stage = new Stage(x, y);
-        this.leftPaddle = new Paddle((int) x / 10, (int) y / 2, 10, 200);
-        this.rightPaddle = new Paddle((int) x - x / 10, (int) y / 2, 10, 200);
+        this.leftPaddle = new Paddle(0 + 20000, (int) y / 2, 50000, 200000);
+        this.rightPaddle = new Paddle(x - 20000, (int) y / 2, 50000, 200000);
+        System.out.println(x + " y: " + y);
     }
 
-    private void loop() {
+    public void loop() {
         while (true) {
             if (balls.isEmpty()) {
                 int xSpeed = 10;
@@ -52,9 +55,14 @@ public class Gameplay {
                     }
                 }
             }
-
             rightPaddle.update(stage);
             leftPaddle.update(stage);
+            frame.updatePanel();
+            try {
+                Thread.currentThread().sleep(16);
+            } catch (InterruptedException ex) {
+                System.out.println("Perse!");
+            }
         }
     }
 
@@ -82,7 +90,15 @@ public class Gameplay {
         return player2score;
     }
 
+    public void setFrame(PongFrame frame) {
+        this.frame = frame;
+    }
+
+    public PongFrame getFrame() {
+        return frame;
+    }
+
     private void addABall(int x, int y, int xSpeed, int ySpeed) {
-        throw new UnsupportedOperationException("Not yet implemented");
+//        throw new UnsupportedOperationException("Not yet implemented");
     }
 }

@@ -9,10 +9,11 @@ package logic;
  * @author 41407
  */
 public class Stage {
+
     private int height;
     private int width;
 
-    public Stage(int height, int width) {
+    public Stage(int width, int height) {
         this.height = height;
         this.width = width;
     }
