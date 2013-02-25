@@ -16,11 +16,21 @@ public class Gameplay {
     private HashSet<Ball> balls;
     private Paddle leftPaddle;
     private Paddle rightPaddle;
-    private Stage s;
+    private Stage stage;
+
+    public int getPlayer1score() {
+        return player1score;
+    }
+
+    public int getPlayer2score() {
+        return player2score;
+    }
+    private int player1score = 0;
+    private int player2score = 0;
 
     public Gameplay(int x, int y) {
         this.balls = new HashSet();
-        this.s = new Stage(x, y);
+        this.stage = new Stage(x, y);
         this.leftPaddle = new Paddle((int) x / 10, (int) y / 2, 10, 200);
         this.rightPaddle = new Paddle((int) x - x / 10, (int) y / 2, 10, 200);
     }
@@ -30,12 +40,12 @@ public class Gameplay {
             if (balls.isEmpty()) {
                 int xSpeed = 10;
                 int ySpeed = 5;
-                addABall(s.getHeight() / 2, s.getHeight() / 2, xSpeed, ySpeed);
+                addABall(stage.getHeight() / 2, stage.getHeight() / 2, xSpeed, ySpeed);
             }
 
             for (Iterator<Ball> it = balls.iterator(); it.hasNext();) {
                 Ball b = it.next();
-                int x = b.update(s);
+                int x = b.update(stage);
                 if (x < leftPaddle.getX()) {
                     if (x < 0) {
                         it.remove();
@@ -43,7 +53,7 @@ public class Gameplay {
                         addABall(b.getX(), b.getY(), b.getxSpeed(), b.getySpeed());
                     }
                 } else if (x > rightPaddle.getX()) {
-                    if (x > s.getWidth()) {
+                    if (x > stage.getWidth()) {
                         it.remove();
                     } else if (b.xCollide(rightPaddle)) {
                         addABall(b.getX(), b.getY(), b.getxSpeed(), b.getySpeed());
@@ -51,9 +61,25 @@ public class Gameplay {
                 }
             }
 
-            rightPaddle.update(s);
-            leftPaddle.update(s);
+            rightPaddle.update(stage);
+            leftPaddle.update(stage);
         }
+    }
+
+    public HashSet<Ball> getBalls() {
+        return balls;
+    }
+
+    public Paddle getLeftPaddle() {
+        return leftPaddle;
+    }
+
+    public Paddle getRightPaddle() {
+        return rightPaddle;
+    }
+
+    public Stage getStage() {
+        return stage;
     }
 
     private void addABall(int x, int y, int xSpeed, int ySpeed) {
