@@ -26,32 +26,34 @@ public class Gameplay {
     }
 
     private void loop() {
-        if (balls.isEmpty()) {
-            int xSpeed = 10;
-            int ySpeed = 5;
-            addABall(s.getHeight() / 2, s.getHeight() / 2, xSpeed, ySpeed);
-        }
-
-        for (Iterator<Ball> it = balls.iterator(); it.hasNext();) {
-            Ball b = it.next();
-            int x = b.update(s);
-            if (x < leftPaddle.getX()) {
-                if (x < 0) {
-                    it.remove();
-                }
-                if (b.xCollide(leftPaddle)) {
-                    addABall(b.getX(), b.getY(), b.x, x);
-                }
-            } else if (x > rightPaddle.getX()) {
-                if (x > s.getWidth()) {
-                    it.remove();
-                }
-                b.xCollide(rightPaddle);
+        while (true) {
+            if (balls.isEmpty()) {
+                int xSpeed = 10;
+                int ySpeed = 5;
+                addABall(s.getHeight() / 2, s.getHeight() / 2, xSpeed, ySpeed);
             }
-        }
 
-        rightPaddle.update(s);
-        leftPaddle.update(s);
+            for (Iterator<Ball> it = balls.iterator(); it.hasNext();) {
+                Ball b = it.next();
+                int x = b.update(s);
+                if (x < leftPaddle.getX()) {
+                    if (x < 0) {
+                        it.remove();
+                    } else if (b.xCollide(leftPaddle)) {
+                        addABall(b.getX(), b.getY(), b.getxSpeed(), b.getySpeed());
+                    }
+                } else if (x > rightPaddle.getX()) {
+                    if (x > s.getWidth()) {
+                        it.remove();
+                    } else if (b.xCollide(rightPaddle)) {
+                        addABall(b.getX(), b.getY(), b.getxSpeed(), b.getySpeed());
+                    }
+                }
+            }
+
+            rightPaddle.update(s);
+            leftPaddle.update(s);
+        }
     }
 
     private void addABall(int x, int y, int xSpeed, int ySpeed) {
