@@ -47,4 +47,13 @@ public class Paddle {
     public void setDirection(Direction direction) {
         this.direction = direction;
     }
+    
+    public void update(Stage s) {
+        if(this.direction == Direction.UP && this.y > 0) {
+            this.y--;
+        }
+        if(this.direction == Direction.DOWN && this.y < s.getHeight()) {
+            this.y++;
+        }
+    }
 }
