@@ -12,16 +12,22 @@ public class Paddle {
 
     private int x;
     private int y;
+    private int score;
     private final int height;
     private final int width;
     private Direction direction;
 
     public Paddle(int x, int y, int height, int width) {
+        this.score = 0;
         this.x = x;
         this.y = y;
         this.height = height;
         this.width = width;
         direction = Direction.STOP;
+    }
+
+    public int getScore() {
+        return score;
     }
 
     public int getX() {
