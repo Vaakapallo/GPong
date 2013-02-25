@@ -17,14 +17,6 @@ public class Gameplay {
     private Paddle leftPaddle;
     private Paddle rightPaddle;
     private Stage stage;
-
-    public int getPlayer1score() {
-        return player1score;
-    }
-
-    public int getPlayer2score() {
-        return player2score;
-    }
     private int player1score = 0;
     private int player2score = 0;
 
@@ -80,6 +72,14 @@ public class Gameplay {
 
     public Stage getStage() {
         return stage;
+    }
+
+    public int getPlayer1score() {
+        return player1score;
+    }
+
+    public int getPlayer2score() {
+        return player2score;
     }
 
     private void addABall(int x, int y, int xSpeed, int ySpeed) {

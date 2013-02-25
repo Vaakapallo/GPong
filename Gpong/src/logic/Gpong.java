@@ -5,7 +5,7 @@
 package logic;
 
 import java.util.Scanner;
-import ui.PongPanel;
+import ui.PongFrame;
 
 /**
  *
@@ -32,6 +32,6 @@ public class Gpong {
         }
 
         Gameplay gameplay = new Gameplay(x, y);
-        PongPanel panel = new PongPanel(gameplay);
+        PongFrame frame = new PongFrame(gameplay);
     }
 }

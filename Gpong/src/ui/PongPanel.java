@@ -15,8 +15,8 @@ import logic.Gameplay;
  */
 public class PongPanel extends JPanel {
     
-    Gameplay game;
-    Drawer drawer;
+    private Gameplay game;
+    private Drawer drawer;
     
     public PongPanel(Gameplay game) {
         this.game = game;
