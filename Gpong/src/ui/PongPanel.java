@@ -25,8 +25,6 @@ public class PongPanel extends JPanel {
     
     @Override
     protected void paintComponent(Graphics g) {
-        g.setColor(Color.black);
-        g.fillRect(0, 0, 99999999, 489999990);
         g.setColor(Color.red);
         drawer.drawBalls(game.getBalls(), g);
         g.setColor(Color.yellow);

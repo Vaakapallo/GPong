@@ -4,6 +4,7 @@
  */
 package ui;
 
+import java.awt.Color;
 import javax.swing.JFrame;
 import logic.Gameplay;
 
@@ -21,6 +22,7 @@ public class PongFrame extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(game.getStage().getWidth() / 1000, game.getStage().getHeight() / 1000);
         this.setVisible(true);
+        this.setBackground(Color.black);
     }
     
     

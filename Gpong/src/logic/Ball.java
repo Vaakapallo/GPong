@@ -15,7 +15,7 @@ public class Ball {
     private int y;
     private int ySpeed;
     private int size;
-    
+
     public Ball(int x, int y, int xSpeed, int ySpeed, int size) {
         this.x = x;
         this.y = y;
@@ -35,14 +35,14 @@ public class Ball {
     public int getSize() {
         return size;
     }
-    
+
     public int update(Stage s) {
-        if(this.y < 0 || this.y > s.getHeight()) {
+        if (this.y < 0 || this.y > s.getHeight()) {
             yCollide();
         }
         this.x += this.xSpeed;
         this.y += this.ySpeed;
-        
+
         return x;
     }
 
@@ -53,20 +53,18 @@ public class Ball {
     public int getySpeed() {
         return ySpeed;
     }
-            
-            
-            
+
     public void yCollide() {
         this.ySpeed *= -1;
     }
-    
+
     /**
-     * 
+     *
      * @param p
      * @return true if ball hits the paddle
      */
     public boolean xCollide(Paddle p) {
-        if(this.y > p.getY() && this.y < p.getY()+p.getHeight()) {
+        if (this.y > p.getY() && this.y < p.getY() + p.getHeight()) {
             this.xSpeed *= -1;
             return true;
         } else {

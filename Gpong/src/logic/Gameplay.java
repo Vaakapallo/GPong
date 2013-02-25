@@ -6,6 +6,7 @@ package logic;
 
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Random;
 import ui.PongFrame;
 
 /**
@@ -33,8 +34,8 @@ public class Gameplay {
     public void loop() {
         while (true) {
             if (balls.isEmpty()) {
-                int xSpeed = 10;
-                int ySpeed = 5;
+                int xSpeed = 1000;
+                int ySpeed = 5002222;
                 addABall(stage.getHeight() / 2, stage.getHeight() / 2, xSpeed, ySpeed);
             }
 
@@ -99,10 +100,13 @@ public class Gameplay {
     }
 
     private void addABall(int x, int y, int xSpeed, int ySpeed) {
+        Random random = new Random();
+        ySpeed += random.nextInt(2000) - 1000;
+        ySpeed += random.nextInt(2000) - 1000;
         Ball b = new Ball(x, y, xSpeed, ySpeed, calculateSize());
         balls.add(b);
     }
-    
+
     private int calculateSize() {
         return 10000;
     }
