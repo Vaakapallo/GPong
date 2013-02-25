@@ -56,7 +56,11 @@ public class Gameplay {
         }
     }
 
-    private void addABall(int x, int y, int xSpeed, int ySpeed) {
-        throw new UnsupportedOperationException("Not yet implemented");
+    private void addABall(int x, int y, int xd, int yd) {
+        Ball b = new Ball(x, y, xd, yd, defineSize());
+    }
+    
+    private int defineSize() {
+        return Math.min(1, 100-balls.size()/2);
     }
 }

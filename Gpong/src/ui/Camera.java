@@ -13,7 +13,7 @@ public class Camera {
     private double scale;
 
     public Camera() {
-        this.scale = 1;
+        this.scale = 1000;
     }
     
     public Camera(int scale) {
