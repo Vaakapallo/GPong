@@ -8,6 +8,6 @@ package gpong;
  *
  * @author lassi
  */
-public class Pallo {
+public class Paddle {
     
 }
