@@ -12,8 +12,8 @@ public class Paddle {
 
     private int x;
     private int y;
-    private int height;
-    private int width;
+    private final int height;
+    private final int width;
     private Direction direction;
 
     public Paddle(int x, int y, int height, int width) {
@@ -23,6 +23,11 @@ public class Paddle {
         this.width = width;
         direction = Direction.STOP;
     }
+
+    public int getX() {
+        return x;
+    }
+
     public int getY() {
         return y;
     }

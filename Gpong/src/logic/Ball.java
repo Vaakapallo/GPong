@@ -14,10 +14,10 @@ public class Ball {
     private int y;
     private int size;
 
-    public Ball(int x, int y, int koko) {
+    public Ball(int x, int y, int size) {
         this.x = x;
         this.y = y;
-        this.size = koko;
+        this.size = size;
     }
 
     public int getX() {
@@ -30,9 +30,5 @@ public class Ball {
 
     public int getSize() {
         return size;
-    }
-    
-    public void blowUp(){
-        
     }
 }
