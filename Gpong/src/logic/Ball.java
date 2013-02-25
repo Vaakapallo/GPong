@@ -36,6 +36,26 @@ public class Ball {
         return size;
     }
     
+    public int update(Stage s) {
+        if(this.y < 0 || this.y > s.getHeight()) {
+            yCollide();
+        }
+        this.x += this.xSpeed;
+        this.y += this.ySpeed;
+        
+        return x;
+    }
+
+    public int getxSpeed() {
+        return xSpeed;
+    }
+
+    public int getySpeed() {
+        return ySpeed;
+    }
+            
+            
+            
     public void yCollide() {
         this.ySpeed *= -1;
     }

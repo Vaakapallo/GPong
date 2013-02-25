@@ -17,10 +17,18 @@ public class Gpong {
      */
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-        System.out.println("ANna kentän x");
-        int x = s.nextInt();
-        System.out.println("Anne kentn yy");
-        int y = s.nextInt();
+        int x = 0;
+        while (x<400) {            
+            System.out.println("ANna kentän x>400");
+            x = s.nextInt();
+        }
+        
+        
+        int y = 0;
+        while (y<400) {            
+            System.out.println("Anne kentn yy>400");
+            y = s.nextInt();
+        }
         
         Gameplay gameplay = new Gameplay(x, y);
     }
