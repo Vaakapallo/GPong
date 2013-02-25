@@ -9,5 +9,5 @@ package logic;
  * @author lassi
  */
 public enum Direction {
-    
+    UP, DOWN, STOP
 }

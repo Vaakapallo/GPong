@@ -31,6 +31,14 @@ public class Listener implements KeyListener {
         } else {
             paddleDirection[0] = Direction.STOP;
         }
+        if(ke.getKeyCode() == KeyEvent.VK_UP) {
+            paddleDirection[1] = Direction.UP;
+        } else if(ke.getKeyCode() == KeyEvent.VK_DOWN) {
+            paddleDirection[1] = Direction.DOWN;
+        } else {
+            paddleDirection[1] = Direction.STOP;
+                    
+        }
     }
 
     @Override
