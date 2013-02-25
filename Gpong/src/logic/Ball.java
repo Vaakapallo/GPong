@@ -31,4 +31,8 @@ public class Ball {
     public int getSize() {
         return size;
     }
+    
+    public void blowUp(){
+        
+    }
 }
