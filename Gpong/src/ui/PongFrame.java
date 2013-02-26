@@ -20,7 +20,7 @@ public class PongFrame extends JFrame {
         this.add(new PongPanel(game));
         this.setTitle("Pong");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(game.getStage().getWidth() / 1000, game.getStage().getHeight() / 1000);
+        this.setSize((int)game.getStage().getWidth(), (int)game.getStage().getHeight());
         this.setVisible(true);
         this.setBackground(Color.black);
     }

@@ -26,33 +26,33 @@ public class Gameplay {
     public Gameplay(int x, int y) {
         this.balls = new HashSet();
         this.stage = new Stage(x, y);
-        this.leftPaddle = new Paddle(0 + 20000, (int) y / 2, 50000, 200000);
-        this.rightPaddle = new Paddle(x - 20000, (int) y / 2, 50000, 200000);
+        this.leftPaddle = new Paddle(50, (int) y / 2, 8, 150);
+        this.rightPaddle = new Paddle(x - 50, (int) y / 2, 8, 150);
         System.out.println(x + " y: " + y);
     }
 
     public void loop() {
         while (true) {
             if (balls.isEmpty()) {
-                int xSpeed = 1000;
-                int ySpeed = 5002222;
+                int xSpeed = 2;
+                int ySpeed = 2;
                 addABall(stage.getHeight() / 2, stage.getHeight() / 2, xSpeed, ySpeed);
             }
 
             for (Iterator<Ball> it = balls.iterator(); it.hasNext();) {
                 Ball b = it.next();
-                int x = b.update(stage);
+                double x = b.update(stage);
                 if (x < leftPaddle.getX()) {
                     if (x < 0) {
                         it.remove();
                     } else if (b.xCollide(leftPaddle)) {
-                        addABall(b.getX(), b.getY(), b.getxSpeed(), b.getySpeed());
+          //              addABall(b.getX(), b.getY(), b.getxSpeed(), b.getySpeed());
                     }
                 } else if (x > rightPaddle.getX()) {
                     if (x > stage.getWidth()) {
                         it.remove();
                     } else if (b.xCollide(rightPaddle)) {
-                        addABall(b.getX(), b.getY(), b.getxSpeed(), b.getySpeed());
+           //             addABall(b.getX(), b.getY(), b.getxSpeed(), b.getySpeed());
                     }
                 }
             }
@@ -99,15 +99,15 @@ public class Gameplay {
         return frame;
     }
 
-    private void addABall(int x, int y, int xSpeed, int ySpeed) {
+    private void addABall(double x, double y, double xSpeed, double ySpeed) {
         Random random = new Random();
-        ySpeed += random.nextInt(2000) - 1000;
-        ySpeed += random.nextInt(2000) - 1000;
+        ySpeed += random.nextInt(3)-1;
+        ySpeed += random.nextInt(3)-1;
         Ball b = new Ball(x, y, xSpeed, ySpeed, calculateSize());
         balls.add(b);
     }
 
-    private int calculateSize() {
-        return 10000;
+    private double calculateSize() {
+        return 10;
     }
 }

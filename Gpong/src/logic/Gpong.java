@@ -31,7 +31,7 @@ public class Gpong {
 //            y = s.nextInt();
 //        }
 
-        Gameplay gameplay = new Gameplay(1200000, 850000);
+        Gameplay gameplay = new Gameplay(800, 600);
         PongFrame frame = new PongFrame(gameplay);
         gameplay.setFrame(frame);
         gameplay.loop();

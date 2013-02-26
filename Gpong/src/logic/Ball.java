@@ -10,13 +10,13 @@ package logic;
  */
 public class Ball {
 
-    private int x;
-    private int xSpeed;
-    private int y;
-    private int ySpeed;
-    private int size;
+    private double x;
+    private double xSpeed;
+    private double y;
+    private double ySpeed;
+    private double size;
 
-    public Ball(int x, int y, int xSpeed, int ySpeed, int size) {
+    public Ball(double x, double y, double xSpeed, double ySpeed, double size) {
         this.x = x;
         this.y = y;
         this.xSpeed = xSpeed;
@@ -24,19 +24,19 @@ public class Ball {
         this.size = size;
     }
 
-    public int getX() {
+    public double getX() {
         return x;
     }
 
-    public int getY() {
+    public double getY() {
         return y;
     }
 
-    public int getSize() {
+    public double getSize() {
         return size;
     }
 
-    public int update(Stage s) {
+    public double update(Stage s) {
         if (this.y < 0 || this.y > s.getHeight()) {
             yCollide();
         }
@@ -46,11 +46,11 @@ public class Ball {
         return x;
     }
 
-    public int getxSpeed() {
+    public double getxSpeed() {
         return xSpeed;
     }
 
-    public int getySpeed() {
+    public double getySpeed() {
         return ySpeed;
     }
 

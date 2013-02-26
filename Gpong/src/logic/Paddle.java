@@ -56,10 +56,10 @@ public class Paddle {
     
     public void update(Stage s) {
         if(this.direction == Direction.UP && this.y > 0) {
-            this.y-=5000;
+            this.y-=5;
         }
         if(this.direction == Direction.DOWN && this.y+this.height < s.getHeight()) {
-            this.y+=5000;
+            this.y+=5;
         }
     }
 }

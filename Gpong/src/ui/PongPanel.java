@@ -20,7 +20,7 @@ public class PongPanel extends JPanel {
     
     public PongPanel(Gameplay game) {
         this.game = game;
-        drawer = new Drawer(new Camera(1000));
+        drawer = new Drawer(new Camera(1));
     }
     
     @Override

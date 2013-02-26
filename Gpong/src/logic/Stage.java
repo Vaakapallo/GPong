@@ -10,19 +10,19 @@ package logic;
  */
 public class Stage {
 
-    private int height;
-    private int width;
+    private double height;
+    private double width;
 
-    public Stage(int width, int height) {
+    public Stage(double width, double height) {
         this.height = height;
         this.width = width;
     }
 
-    public int getHeight() {
+    public double getHeight() {
         return this.height;
     }
 
-    public int getWidth() {
+    public double getWidth() {
         return width;
     }
 }
